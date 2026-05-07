@@ -1,0 +1,20 @@
+/* =========================
+   Core Variables
+   ========================= */
+
+:root {
+  --biru: #4dabf7;
+  --hijau: #51cf66;
+  --kuning: #ffd43b;
+  --merah: #ff6b6b;
+  --ungu: #845ef7;
+  --pink: #f783ac;
+  --bg: #f8f9fa;
+
+  /* Alias */
+  --brand: var(--biru);
+
+  --radius-xl: 26px;
+  --radius-lg: 18px;
+  --shadow-soft: 0 10px 26px rgba(0, 0, 0, .08);
+}

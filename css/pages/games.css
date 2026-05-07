@@ -1,0 +1,593 @@
+/* =========================
+   Games
+   Used by games.html
+   ========================= */
+
+.game-box {
+  min-height: 160px;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.game-card {
+  position: relative;
+  background: #fff;
+  border-radius: 24px;
+  border: 2px solid rgba(0, 0, 0, .08);
+  box-shadow: 0 10px 0 rgba(0, 0, 0, .12);
+  padding: 16px 16px 16px 74px;
+  text-align: left;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.game-card span {
+  display: block;
+  font-weight: 600;
+  font-size: 12px;
+  opacity: .7;
+  margin-top: 4px;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+}
+
+.game-card.active {
+  outline: 4px dashed rgba(77, 171, 247, .5);
+  border: 2.5px solid rgba(77, 171, 247, 1);
+  box-shadow: 0 14px 0 rgba(0, 0, 0, .12);
+}
+
+.game-card.locked {
+  opacity: .5;
+  cursor: not-allowed;
+}
+
+.game-card::before {
+  content: attr(data-ico);
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  border: 2.5px solid rgba(77, 171, 247, 1);
+  background: #fff;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, .12);
+  font-size: 22px;
+}
+
+.game-panel {
+  min-height: 260px;
+}
+
+/* NP Puzzle UI */
+.np-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(70px, 1fr));
+  gap: 12px;
+  outline: none;
+}
+
+.np-tile {
+  height: 74px;
+  border-radius: 18px;
+  border: 2px solid rgba(77, 171, 247, .55);
+  background: #fff;
+  font-weight: 1000;
+  font-size: 28px;
+  box-shadow: 0 12px 0 rgba(0, 0, 0, .10);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+
+.np-tile:active {
+  transform: translateY(2px) scale(.99);
+  box-shadow: 0 10px 0 rgba(0, 0, 0, .10);
+}
+
+.np-tile.empty {
+  border-style: dashed;
+  opacity: .35;
+  cursor: default;
+  box-shadow: none;
+  background: rgba(255, 255, 255, .4);
+}
+
+.np-tile.movable {
+  border-color: rgba(81, 207, 102, .75);
+  animation: npGlow 1.1s ease-in-out infinite;
+}
+
+.np-pulse {
+  animation: npPulse .55s ease-in-out 2;
+}
+
+.np-shake {
+  animation: npShake .35s ease-in-out;
+}
+
+@keyframes npGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(81, 207, 102, 0));
+  }
+
+  50% {
+    filter: drop-shadow(0 0 12px rgba(81, 207, 102, .55));
+  }
+}
+
+@keyframes npPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.06);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes npShake {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-6px);
+  }
+
+  50% {
+    transform: translateX(6px);
+  }
+
+  75% {
+    transform: translateX(-4px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 520px) {
+  .np-grid {
+    grid-template-columns: repeat(3, minmax(60px, 1fr));
+    gap: 10px;
+  }
+}
+
+/* =========================
+   Catch Star Game
+   ========================= */
+
+   .catch-hud {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .catch-hud > div {
+    padding: 10px 12px;
+    border-radius: 18px;
+    background: rgba(255,255,255,.82);
+    border: 2px solid rgba(77,171,247,.18);
+    box-shadow: 0 8px 0 rgba(0,0,0,.07);
+    font-weight: 900;
+    text-align: center;
+  }
+  
+  .catch-arena {
+    position: relative;
+    height: 360px;
+    margin-top: 14px;
+    border-radius: 28px;
+    overflow: hidden;
+    border: 3px dashed rgba(77,171,247,.32);
+    background:
+      radial-gradient(circle at 18% 24%, rgba(255,212,59,.28), transparent 120px),
+      radial-gradient(circle at 82% 68%, rgba(132,94,247,.18), transparent 140px),
+      linear-gradient(135deg, #f8fbff, #fff7fb);
+  }
+  
+  .catch-item {
+    position: absolute;
+    border: 0;
+    background: rgba(255,255,255,.85);
+    width: 64px;
+    height: 64px;
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
+    font-size: 34px;
+    cursor: pointer;
+    box-shadow: 0 12px 0 rgba(0,0,0,.12);
+    animation: catchSpawn .22s ease both, catchFloat .85s ease-in-out infinite alternate;
+    transition: transform .12s ease, filter .12s ease;
+    z-index: 3;
+  }
+  
+  .catch-item:hover {
+    transform: scale(1.15) rotate(8deg);
+    filter: brightness(1.08);
+  }
+  
+  .catch-good {
+    border: 2px solid rgba(255,212,59,.75);
+  }
+  
+  .catch-bonus {
+    border: 2px solid rgba(132,94,247,.6);
+    box-shadow:
+      0 12px 0 rgba(0,0,0,.12),
+      0 0 22px rgba(132,94,247,.25);
+  }
+  
+  .catch-time {
+    border: 2px solid rgba(77,171,247,.7);
+  }
+  
+  .catch-bad {
+    border: 2px solid rgba(255,107,107,.75);
+    background: rgba(255,245,245,.92);
+  }
+  
+  .catch-item.missed {
+    animation: catchMiss .22s ease forwards;
+  }
+  
+  .catch-pop {
+    position: absolute;
+    z-index: 4;
+    font-weight: 1000;
+    font-size: 20px;
+    pointer-events: none;
+    animation: catchPop .65s ease forwards;
+  }
+  
+  .catch-big {
+    font-size: 72px;
+    line-height: 1;
+  }
+  
+  .catch-rules {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .catch-rules span {
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.8);
+    border: 2px solid rgba(77,171,247,.16);
+    font-weight: 900;
+  }
+  
+  .catch-result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 11px;
+  }
+  
+  .catch-mini-stat {
+    padding: 12px;
+    border-radius: 18px;
+    background: #fff;
+    border: 2px solid rgba(0,0,0,.06);
+    box-shadow: 0 8px 0 rgba(0,0,0,.07);
+  }
+  
+  .catch-mini-stat b {
+    display: block;
+    font-size: 24px;
+  }
+  
+  .catch-mini-stat span {
+    display: block;
+    color: #6b7280;
+    font-size: 13px;
+    font-weight: 800;
+  }
+  
+  .catch-cloud {
+    position: absolute;
+    opacity: .38;
+    font-size: 34px;
+    pointer-events: none;
+    animation: cloudMove 8s linear infinite;
+  }
+  
+  .catch-cloud.c1 {
+    top: 28px;
+    left: -40px;
+  }
+  
+  .catch-cloud.c2 {
+    top: 130px;
+    left: -90px;
+    animation-duration: 11s;
+  }
+  
+  .catch-cloud.c3 {
+    top: 245px;
+    left: -60px;
+    animation-duration: 14s;
+  }
+  
+  @keyframes catchSpawn {
+    from {
+      transform: scale(.4) rotate(-20deg);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) rotate(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes catchFloat {
+    from {
+      translate: 0 0;
+    }
+    to {
+      translate: 0 -8px;
+    }
+  }
+  
+  @keyframes catchMiss {
+    to {
+      transform: scale(.25) rotate(20deg);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes catchPop {
+    0% {
+      transform: translateY(0) scale(.8);
+      opacity: 0;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-38px) scale(1.15);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes cloudMove {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(120vw);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .catch-hud {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .catch-arena {
+      height: 300px;
+    }
+  
+    .catch-item {
+      width: 56px;
+      height: 56px;
+      font-size: 30px;
+    }
+  
+    .catch-result-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Monster Game */
+.monster-hud,
+.balloon-hud {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.monster-hud > div,
+.balloon-hud > div {
+  padding: 10px;
+  border-radius: 18px;
+  background: rgba(255,255,255,.85);
+  border: 2px solid rgba(77,171,247,.18);
+  box-shadow: 0 8px 0 rgba(0,0,0,.07);
+  font-weight: 900;
+  text-align: center;
+}
+
+.monster-arena {
+  position: relative;
+  height: 360px;
+  margin-top: 14px;
+  overflow: hidden;
+  border-radius: 28px;
+  border: 3px dashed rgba(132,94,247,.35);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(132,94,247,.18), transparent 120px),
+    radial-gradient(circle at 80% 70%, rgba(255,212,59,.22), transparent 140px),
+    linear-gradient(135deg, #f8fbff, #fff7fb);
+}
+
+.monster-item {
+  position: absolute;
+  width: 66px;
+  height: 66px;
+  border: 0;
+  border-radius: 22px;
+  background: rgba(255,255,255,.9);
+  font-size: 36px;
+  cursor: pointer;
+  box-shadow: 0 12px 0 rgba(0,0,0,.12);
+  animation: monsterSpawn .2s ease both, monsterFloat .8s ease-in-out infinite alternate;
+}
+
+.monster-item:hover {
+  transform: scale(1.14) rotate(8deg);
+}
+
+.monster-bomb {
+  background: rgba(255,240,240,.95);
+}
+
+.monster-boss {
+  box-shadow: 0 12px 0 rgba(0,0,0,.12), 0 0 20px rgba(255,212,59,.4);
+}
+
+.monster-miss {
+  animation: monsterMiss .22s ease forwards;
+}
+
+.monster-pop {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 1000;
+  pointer-events: none;
+  animation: monsterPop .65s ease forwards;
+  z-index: 5;
+}
+
+.monster-bg {
+  position: absolute;
+  opacity: .35;
+  pointer-events: none;
+  font-size: 32px;
+}
+
+.monster-bg.m1 { left: 8%; top: 12%; }
+.monster-bg.m2 { right: 12%; top: 38%; }
+.monster-bg.m3 { left: 50%; bottom: 12%; }
+
+@keyframes monsterSpawn {
+  from { transform: scale(.3) rotate(-20deg); opacity: 0; }
+  to { transform: scale(1) rotate(0); opacity: 1; }
+}
+
+@keyframes monsterFloat {
+  from { translate: 0 0; }
+  to { translate: 0 -9px; }
+}
+
+@keyframes monsterMiss {
+  to { transform: scale(.2) rotate(24deg); opacity: 0; }
+}
+
+@keyframes monsterPop {
+  0% { transform: translateY(0) scale(.8); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-36px) scale(1.12); opacity: 0; }
+}
+
+/* Balloon Game */
+.balloon-target {
+  padding: 14px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #fff9db, #fff);
+  border: 2px dashed rgba(255,212,59,.65);
+  text-align: center;
+  font-size: 24px;
+  font-weight: 1000;
+}
+
+.balloon-arena {
+  min-height: 260px;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 22px;
+  border-radius: 28px;
+  border: 3px dashed rgba(77,171,247,.28);
+  background:
+    radial-gradient(circle at 15% 20%, rgba(77,171,247,.18), transparent 110px),
+    radial-gradient(circle at 85% 70%, rgba(247,131,172,.18), transparent 120px),
+    linear-gradient(135deg, #f8fbff, #fff7fb);
+}
+
+.balloon-item {
+  width: 96px;
+  height: 128px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  animation: balloonUp 1.2s ease-in-out infinite alternate;
+}
+
+.balloon-item .balloon-emoji {
+  font-size: 58px;
+  line-height: 1;
+}
+
+.balloon-item b {
+  margin-top: -12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #fff;
+  box-shadow: 0 6px 0 rgba(0,0,0,.08);
+}
+
+.balloon-pop-good {
+  animation: balloonPopGood .38s ease forwards !important;
+}
+
+.balloon-pop-bad {
+  animation: balloonPopBad .38s ease forwards !important;
+}
+
+@keyframes balloonUp {
+  from { transform: translateY(0) rotate(-2deg); }
+  to { transform: translateY(-12px) rotate(3deg); }
+}
+
+@keyframes balloonPopGood {
+  to { transform: scale(1.35) rotate(18deg); opacity: 0; }
+}
+
+@keyframes balloonPopBad {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-8px); }
+}
+
+@media (max-width: 576px) {
+  .monster-hud,
+  .balloon-hud {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .monster-arena {
+    height: 300px;
+  }
+
+  .balloon-item {
+    width: 78px;
+    height: 112px;
+  }
+}

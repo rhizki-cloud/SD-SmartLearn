@@ -1,0 +1,14 @@
+/* =========================
+   Reset
+   ========================= */
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}

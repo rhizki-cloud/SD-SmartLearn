@@ -1,0 +1,496 @@
+/* =========================
+   Home / Kelas
+   Used by home.html
+   ========================= */
+
+/* ===== Kelas Panel ===== */
+.kelas-panel {
+  padding: 32px 28px 36px !important;
+  overflow: hidden;
+}
+
+.kelas-panel .h4 {
+  margin-top: 0 !important;
+  line-height: 1.25;
+}
+
+/* ===== Kelas Grid ===== */
+.kelas-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 22px;
+}
+
+.kelas-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  min-height: 120px;
+  padding: 22px 34px 22px 22px;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  border-radius: var(--radius-xl);
+  border: 2px solid rgba(0, 0, 0, .08);
+  background: #fff;
+  box-shadow: 0 12px 0 rgba(0, 0, 0, .12);
+
+  text-align: left;
+  font-weight: 900;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+
+  animation: kelasPop .35s ease both;
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    filter .18s ease,
+    border-color .18s ease;
+}
+
+/* Area teks */
+.kelas-info {
+  flex: 1;
+  min-width: 0;
+  padding-right: 56px;
+  position: relative;
+  z-index: 2;
+}
+
+.kelas-card b {
+  display: block;
+  max-width: 100%;
+  font-size: 19px;
+  line-height: 1.2;
+  margin-bottom: 6px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kelas-card span,
+.kelas-card small,
+.kelas-card .small {
+  display: block;
+  max-width: 100%;
+  font-size: 14px;
+  line-height: 1.25;
+  opacity: .72;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Ikon */
+.kelas-card .ico {
+  flex: 0 0 64px;
+  width: 64px;
+  height: 64px;
+
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .86);
+  border: 2px solid rgba(0, 0, 0, .06);
+
+  display: grid;
+  place-items: center;
+
+  font-size: 31px;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .04);
+  transition: transform .18s ease;
+  position: relative;
+  z-index: 2;
+}
+
+/* Sparkle */
+.kelas-card::after {
+  content: "✨";
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  opacity: .7;
+  z-index: 1;
+  transform: rotate(-10deg);
+  transition: transform .18s ease, opacity .18s ease;
+}
+
+/* Blob background */
+.kelas-card::before {
+  content: "";
+  position: absolute;
+  right: -54px;
+  bottom: -58px;
+
+  width: 145px;
+  height: 145px;
+  border-radius: 999px;
+
+  opacity: .18;
+  z-index: -1;
+  transition: transform .22s ease, opacity .22s ease;
+}
+
+/* Warna per kelas */
+.kelas-card:nth-child(1) {
+  background: linear-gradient(135deg, #fff 0%, #fff3f8 100%);
+}
+.kelas-card:nth-child(1)::before {
+  background: #ff6bcb;
+}
+
+.kelas-card:nth-child(2) {
+  background: linear-gradient(135deg, #fff 0%, #f1fff5 100%);
+}
+.kelas-card:nth-child(2)::before {
+  background: #51cf66;
+}
+
+.kelas-card:nth-child(3) {
+  background: linear-gradient(135deg, #fff 0%, #f1f8ff 100%);
+}
+.kelas-card:nth-child(3)::before {
+  background: #4dabf7;
+}
+
+.kelas-card:nth-child(4) {
+  background: linear-gradient(135deg, #fff 0%, #fff9db 100%);
+}
+.kelas-card:nth-child(4)::before {
+  background: #ffd43b;
+}
+
+.kelas-card:nth-child(5) {
+  background: linear-gradient(135deg, #fff 0%, #f5f0ff 100%);
+}
+.kelas-card:nth-child(5)::before {
+  background: #845ef7;
+}
+
+.kelas-card:nth-child(6) {
+  background: linear-gradient(135deg, #fff 0%, #fff0f0 100%);
+}
+.kelas-card:nth-child(6)::before {
+  background: #ff6b6b;
+}
+
+/* Hover */
+.kelas-card:hover {
+  transform: translateY(-5px) rotate(-.3deg);
+  box-shadow: 0 16px 0 rgba(0, 0, 0, .12);
+  border-color: rgba(77, 171, 247, .35);
+  filter: brightness(1.02);
+}
+
+.kelas-card:hover .ico {
+  transform: scale(1.08) rotate(-5deg);
+}
+
+.kelas-card:hover::before {
+  transform: scale(1.28);
+  opacity: .26;
+}
+
+.kelas-card:hover::after {
+  transform: rotate(12deg) scale(1.25);
+  opacity: 1;
+}
+
+.kelas-card:active {
+  transform: translateY(2px);
+  box-shadow: 0 8px 0 rgba(0, 0, 0, .12);
+}
+
+/* Klik animasi */
+.kelas-card.zooming {
+  animation: zoomOut .25s ease forwards;
+  z-index: 10;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(.92);
+    opacity: .6;
+  }
+}
+
+/* Delay animasi masuk */
+.kelas-card:nth-child(1) { animation-delay: .02s; }
+.kelas-card:nth-child(2) { animation-delay: .06s; }
+.kelas-card:nth-child(3) { animation-delay: .10s; }
+.kelas-card:nth-child(4) { animation-delay: .14s; }
+.kelas-card:nth-child(5) { animation-delay: .18s; }
+.kelas-card:nth-child(6) { animation-delay: .22s; }
+
+@keyframes kelasPop {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Tip */
+.home-tip {
+  margin-top: 14px;
+  line-height: 1.4;
+}
+
+/* ===== Action Buttons ===== */
+.btn-game,
+.btn-badge {
+  border-radius: 18px;
+  padding: 14px 20px;
+  font-weight: 800;
+  font-size: 16px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  border: 2px solid transparent;
+  box-shadow: 0 8px 0 rgba(0, 0, 0, .12);
+
+  transition:
+    transform .18s ease,
+    box-shadow .18s ease,
+    filter .18s ease;
+}
+
+.btn-game {
+  background: linear-gradient(135deg, #4dabf7, #845ef7);
+  color: #fff;
+}
+
+.btn-badge {
+  background: linear-gradient(135deg, #ffd43b, #ff922b);
+  color: #1f2937;
+}
+
+.btn-game:hover,
+.btn-badge:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 0 rgba(0, 0, 0, .12);
+  filter: brightness(1.05);
+}
+
+.btn-game:active,
+.btn-badge:active {
+  transform: translateY(2px);
+  box-shadow: 0 5px 0 rgba(0, 0, 0, .12);
+}
+
+/* ===== Home Stats ===== */
+/* ===== Home Stats ===== */
+.home-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin: 0;
+  height: 100%;
+  align-items: stretch;
+}
+
+.home-stat-card {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 260px;
+  padding: 22px 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  border-radius: 24px;
+  background: rgba(255, 255, 255, .86);
+  border: 2px solid rgba(0, 0, 0, .06);
+  box-shadow: 0 12px 0 rgba(0, 0, 0, .10);
+
+  transition: transform .16s ease;
+}
+
+.home-stat-card::after {
+  content: "";
+  position: absolute;
+  right: -28px;
+  bottom: -38px;
+  width: 110px;
+  height: 110px;
+  border-radius: 999px;
+  background: rgba(77, 171, 247, .16);
+  z-index: 0;
+}
+
+.home-stat-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.home-stat-card:nth-child(1)::after {
+  background: rgba(255, 212, 59, .25);
+}
+
+.home-stat-card:nth-child(2)::after {
+  background: rgba(81, 207, 102, .22);
+}
+
+.home-stat-card:nth-child(3)::after {
+  background: rgba(132, 94, 247, .18);
+}
+
+.home-stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.home-stat-icon {
+  width: 46px;
+  height: 46px;
+  min-height: 46px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .06);
+
+  font-size: 25px;
+  margin-bottom: 14px;
+}
+
+.home-stat-value {
+  min-height: 42px;
+
+  display: flex;
+  align-items: center;
+
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.home-stat-label {
+  min-height: 64px;
+
+  display: flex;
+  align-items: flex-start;
+
+  margin-top: 8px;
+  font-weight: 800;
+  color: #4b5563;
+  line-height: 1.25;
+}
+
+.home-stat-small {
+  min-height: 60px;
+
+  margin-top: 8px;
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.45;
+}
+
+/* Khusus card progress agar bar tetap di bawah */
+.home-stat-card .d-flex.justify-content-between {
+  margin-top: auto;
+}
+
+.home-progress {
+  margin-top: 12px;
+  height: 12px;
+  border-radius: 999px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, .08);
+}
+
+.home-progress > div {
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #4dabf7, #845ef7);
+  transition: width .25s ease;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .kelas-grid {
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+  }
+
+  .home-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .home-stat-card {
+    min-height: 220px;
+  }
+}
+
+@media (max-width: 576px) {
+  .kelas-panel {
+    padding: 24px 18px 30px !important;
+  }
+
+  .kelas-grid {
+    gap: 14px;
+  }
+
+  .kelas-card {
+    min-height: 112px;
+    padding: 18px 28px 18px 18px;
+    gap: 12px;
+  }
+
+  .kelas-info {
+    padding-right: 34px;
+  }
+
+  .kelas-card .ico {
+    flex-basis: 54px;
+    width: 54px;
+    height: 54px;
+    font-size: 27px;
+  }
+
+  .kelas-card b {
+    font-size: 17px;
+  }
+
+  .kelas-card span,
+  .kelas-card small,
+  .kelas-card .small {
+    font-size: 13px;
+  }
+
+  .btn-game,
+  .btn-badge {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 420px) {
+  .kelas-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

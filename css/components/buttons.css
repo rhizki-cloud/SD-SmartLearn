@@ -1,0 +1,14 @@
+/* =========================
+   Buttons
+   ========================= */
+
+.btn,
+button {
+  min-height: 44px;
+  touch-action: manipulation;
+}
+
+.btn-primary {
+  background: var(--brand) !important;
+  border-color: var(--brand) !important;
+}

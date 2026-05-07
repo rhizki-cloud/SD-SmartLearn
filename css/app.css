@@ -1,0 +1,84 @@
+/* SD SmartLearn — CSS Entry Point */
+
+/* Core */
+@import url("./core/variables.css");
+@import url("./core/reset.css");
+@import url("./core/base.css");
+@import url("./core/responsive.css");
+
+/* Layout */
+@import url("./layout/navbar.css");
+@import url("./layout/panel.css");
+@import url("./layout/auth-layout.css");
+
+/* Components */
+@import url("./components/buttons.css");
+@import url("./components/cards.css");
+@import url("./components/mascot.css");
+@import url("./components/music.css");
+@import url("./components/animations.css");
+@import url("./components/media.css");
+
+/* Pages */
+@import url("./pages/home.css");
+@import url("./pages/games.css");
+@import url("./pages/subject.css");
+@import url("./pages/profile.css");
+
+.panel {
+    padding: 20px 22px !important;
+  }
+  .reward-info-box {
+    padding: 24px;
+  }
+  
+  .reward-info-box h3 {
+    font-weight: 900;
+    margin-bottom: 12px;
+  }
+  
+  .reward-info-box ul {
+    margin: 0;
+    padding-left: 24px;
+    font-size: 18px;
+    line-height: 1.7;
+  }
+  
+  .reward-point-box {
+    margin-top: 18px;
+    padding: 16px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, .75);
+    border: 2px solid rgba(77, 171, 247, .18);
+  }
+  
+  .reward-point-bar {
+    height: 14px;
+    margin-top: 10px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, .08);
+  }
+  
+  .reward-point-bar > div {
+    height: 100%;
+    width: 0%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #4dabf7, #845ef7);
+    transition: width .25s ease;
+  }
+
+  .nav-grade-select {
+    max-width: 130px;
+    border-radius: 18px;
+    border: 2px solid rgba(77, 171, 247, .35);
+    font-weight: 900;
+    box-shadow: 0 6px 0 rgba(0, 0, 0, .10);
+  }
+  
+  @media (max-width: 576px) {
+    .nav-grade-select {
+      max-width: 110px;
+      font-size: 13px;
+    }
+  }

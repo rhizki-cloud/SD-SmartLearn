@@ -1,0 +1,649 @@
+/* =========================
+   Profile
+   Used by profile.html
+   ========================= */
+
+/* Avatar wrapper */
+#avatarPick {
+  width: 100%;
+  max-height: 260px;
+  overflow-y: auto;
+  padding: 6px 8px 2px;
+}
+
+/* Avatar category */
+.avatar-group {
+  width: 100%;
+  margin-bottom: 18px;
+  padding: 12px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .65);
+  border: 2px dashed rgba(77, 171, 247, .22);
+}
+
+/* Category title */
+.avatar-title {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(255, 212, 59, .35);
+  font-size: 15px;
+  font-weight: 900;
+  color: #1f2937;
+}
+
+/* Avatar list */
+.avatar-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Avatar item */
+#avatarPick .avatar {
+  flex: 0 0 auto;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  border: 2px solid rgba(0, 0, 0, .08);
+  background: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+  transition:
+    transform .08s ease,
+    border-color .12s ease,
+    box-shadow .12s ease,
+    background .12s ease;
+}
+
+#avatarPick .avatar:hover {
+  transform: translateY(-2px) scale(1.04);
+  border-color: rgba(13, 110, 253, .45);
+  box-shadow: 0 6px 16px rgba(13, 110, 253, .12);
+}
+
+#avatarPick .avatar.active {
+  border-color: rgba(13, 110, 253, 1);
+  background: rgba(13, 110, 253, .06);
+  box-shadow: 0 10px 24px rgba(13, 110, 253, .18);
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  #avatarPick {
+    max-height: 320px;
+  }
+
+  .avatar-group {
+    padding: 10px;
+  }
+
+  #avatarPick .avatar {
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+  }
+}
+
+/* =========================
+   Profile Hero Upgrade
+   ========================= */
+
+   .top-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    padding: 28px !important;
+  
+    background:
+      radial-gradient(circle at 8% 18%, rgba(255, 212, 59, .22) 0 150px, transparent 151px),
+      radial-gradient(circle at 92% 88%, rgba(247, 131, 172, .20) 0 170px, transparent 171px),
+      linear-gradient(135deg, rgba(255,255,255,.92), rgba(243,251,255,.88));
+  
+    border: 2px solid rgba(77, 171, 247, .18);
+    box-shadow: 0 16px 0 rgba(0,0,0,.08);
+  }
+  
+  .top-hero::after {
+    content: "✨";
+    position: absolute;
+    right: 28px;
+    top: 18px;
+    font-size: 26px;
+    opacity: .7;
+    transform: rotate(12deg);
+  }
+  
+  .kid-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  
+    padding: 8px 14px;
+    border-radius: 999px;
+  
+    background: rgba(255, 255, 255, .78);
+    border: 2px solid rgba(77, 171, 247, .18);
+    box-shadow: 0 8px 0 rgba(0,0,0,.06);
+  
+    font-weight: 900;
+    color: #1f2937;
+  }
+  
+  .top-hero h1 {
+    margin-top: 10px !important;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.05;
+    letter-spacing: -.8px;
+  }
+  
+  .kid-stat {
+    position: relative;
+    overflow: hidden;
+  
+    min-height: 116px;
+    padding: 18px;
+  
+    border-radius: 24px;
+    background: rgba(255, 255, 255, .82);
+    border: 2px solid rgba(0,0,0,.06);
+    box-shadow: 0 10px 0 rgba(0,0,0,.09);
+  }
+  
+  .kid-stat::after {
+    content: "";
+    position: absolute;
+    right: -34px;
+    bottom: -42px;
+  
+    width: 120px;
+    height: 120px;
+    border-radius: 999px;
+    background: rgba(77,171,247,.15);
+  }
+  
+  .kid-stat .num {
+    position: relative;
+    z-index: 1;
+  
+    font-size: 28px;
+    font-weight: 1000;
+    line-height: 1;
+  }
+  
+  .kid-stat .lbl {
+    position: relative;
+    z-index: 1;
+  
+    margin-top: 8px;
+    font-weight: 800;
+    color: #4b5563;
+  }
+  
+  .kid-stat:nth-child(1)::after {
+    background: rgba(255, 212, 59, .28);
+  }
+  
+  .kid-stat:nth-child(2)::after {
+    background: rgba(132, 94, 247, .18);
+  }
+  
+  .kid-bar {
+    height: 14px;
+    border-radius: 999px;
+    overflow: hidden;
+    background: rgba(0,0,0,.08);
+  }
+  
+  .kid-bar > div {
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #4dabf7, #845ef7);
+    transition: width .3s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .top-hero {
+      padding: 22px !important;
+    }
+  
+    .top-hero h1 {
+      font-size: 30px;
+    }
+  
+    .kid-stat {
+      min-height: 100px;
+    }
+  }
+
+  /* =========================
+   Panel Spacing
+   ========================= */
+
+.panel {
+  padding: 24px !important;
+}
+
+/* =========================
+   Avatar Unlock
+   ========================= */
+
+#avatarPick .avatar.locked {
+  position: relative;
+  opacity: .45;
+  filter: grayscale(.5);
+  cursor: not-allowed;
+}
+
+#avatarPick .avatar.locked::after {
+  content: "🔒";
+  position: absolute;
+  right: -6px;
+  top: -8px;
+
+  width: 24px;
+  height: 24px;
+
+  border-radius: 999px;
+  background: #fff;
+
+  display: grid;
+  place-items: center;
+
+  font-size: 13px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, .12);
+}
+
+/* =========================
+   Badge Card
+   ========================= */
+
+.badge-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 16px;
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, .88);
+  border: 2px solid rgba(0, 0, 0, .06);
+  box-shadow: 0 10px 0 rgba(0, 0, 0, .08);
+}
+
+.badge-card.done {
+  background: linear-gradient(135deg, #fff, #f1fff5);
+  border-color: rgba(81, 207, 102, .35);
+}
+
+.badge-card.locked {
+  background: linear-gradient(135deg, #fff, #f8fbff);
+}
+
+.badge-ico {
+  flex: 0 0 58px;
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 18px;
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, .06);
+
+  font-size: 26px;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .04);
+}
+
+.badge-card .t {
+  font-weight: 900;
+  font-size: 16px;
+}
+
+.badge-card .d {
+  margin-top: 2px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+/* =========================
+   Progress Gamification
+   ========================= */
+
+.progress-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.progress-card {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding: 16px;
+  border-radius: 22px;
+
+  background: rgba(255, 255, 255, .88);
+  border: 2px solid rgba(0, 0, 0, .06);
+  box-shadow: 0 10px 0 rgba(0, 0, 0, .08);
+
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+
+.progress-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 0 rgba(0, 0, 0, .08);
+}
+
+.progress-card.done {
+  border-color: rgba(81, 207, 102, .35);
+  background: linear-gradient(135deg, #fff, #f1fff5);
+}
+
+.progress-card.pending {
+  background: linear-gradient(135deg, #fff, #f8fbff);
+}
+
+.progress-icon {
+  flex: 0 0 58px;
+  width: 58px;
+  height: 58px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 18px;
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, .06);
+
+  font-size: 28px;
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, .04);
+}
+
+.progress-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.progress-title {
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.2;
+}
+
+.progress-status {
+  margin-top: 3px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.progress-mini {
+  margin-top: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, .08);
+  overflow: hidden;
+}
+
+.progress-mini > div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #4dabf7, #845ef7);
+}
+
+.progress-xp {
+  margin-top: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #845ef7;
+}
+
+.progress-badge {
+  font-size: 24px;
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .panel {
+    padding: 18px !important;
+  }
+
+  .progress-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-card,
+  .badge-card {
+    align-items: flex-start;
+  }
+}
+
+#avatarPick .avatar.locked {
+  position: relative;
+  opacity: .35;
+  filter: grayscale(1);
+  pointer-events: auto;
+  cursor: not-allowed;
+}
+
+#avatarPick .avatar.locked::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(255,255,255,.55);
+}
+
+#avatarPick .avatar.locked::after {
+  content: "🔒";
+  position: absolute;
+  right: -6px;
+  top: -8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  background: #fff;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.12);
+}
+
+/* =========================
+   Skin Card Upgrade
+   ========================= */
+
+   .skin-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  
+    padding: 18px;
+    border-radius: 26px;
+  
+    background: #fff;
+    border: 2px solid rgba(0,0,0,.06);
+    box-shadow: 0 12px 0 rgba(0,0,0,.10);
+  
+    position: relative;
+    overflow: hidden;
+  
+    transition: all .2s ease;
+  }
+  
+  .skin-card:hover {
+    transform: translateY(-4px) scale(1.01);
+  }
+  
+  /* blob background */
+  .skin-card::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    bottom: -40px;
+  
+    width: 120px;
+    height: 120px;
+    border-radius: 999px;
+  
+    background: rgba(77,171,247,.18);
+  }
+  
+  /* icon */
+  .skin-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+  
+    display: grid;
+    place-items: center;
+  
+    font-size: 28px;
+    background: #fff;
+    border: 2px solid rgba(0,0,0,.06);
+  }
+  
+  /* title */
+  .skin-title {
+    font-weight: 900;
+    font-size: 17px;
+  }
+  
+  /* price */
+  .skin-price {
+    font-size: 14px;
+    opacity: .7;
+  }
+  
+  /* button */
+  .skin-btn {
+    border-radius: 14px;
+    font-weight: 800;
+  }
+  
+  /* LOCKED */
+  .skin-locked {
+    opacity: .6;
+  }
+  
+  .skin-locked::before {
+    content: "🔒";
+    position: absolute;
+    right: 14px;
+    top: 12px;
+  }
+
+  /* =========================
+   Animated Skin Upgrade
+   ========================= */
+
+.skin-card {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.skin-card::before {
+  content: "";
+  position: absolute;
+  inset: -40%;
+  z-index: -1;
+
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.85), transparent 18%),
+    radial-gradient(circle at 80% 30%, rgba(77,171,247,.18), transparent 24%),
+    radial-gradient(circle at 70% 80%, rgba(132,94,247,.18), transparent 24%);
+
+  opacity: 0;
+  transform: rotate(0deg) scale(.9);
+  transition: opacity .25s ease;
+}
+
+.skin-card:hover::before {
+  opacity: 1;
+  animation: skinGlowMove 4s linear infinite;
+}
+
+.skin-card:hover .skin-icon,
+.skin-card:hover .badge-ico {
+  animation: skinIconBounce .7s ease infinite alternate;
+}
+
+.skin-card.skin-active {
+  border-color: rgba(77, 171, 247, .6);
+  box-shadow:
+    0 12px 0 rgba(0,0,0,.10),
+    0 0 0 5px rgba(77,171,247,.14);
+}
+
+.skin-card.skin-active::after {
+  content: "✨";
+  position: absolute;
+  right: 18px;
+  top: 14px;
+  font-size: 24px;
+  animation: sparkleSpin 1.4s ease-in-out infinite;
+}
+
+.skin-card.skin-locked {
+  filter: grayscale(.25);
+}
+
+.skin-card.skin-locked:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes skinGlowMove {
+  from {
+    transform: rotate(0deg) scale(.95);
+  }
+  to {
+    transform: rotate(360deg) scale(.95);
+  }
+}
+
+@keyframes skinIconBounce {
+  from {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  to {
+    transform: translateY(-6px) rotate(-6deg) scale(1.08);
+  }
+}
+
+@keyframes sparkleSpin {
+  0%, 100% {
+    transform: rotate(-10deg) scale(1);
+  }
+  50% {
+    transform: rotate(16deg) scale(1.25);
+  }
+}
+
+.skin-card.skin-unlock-pop {
+  animation: skinUnlockPop .55s ease both;
+}
+
+@keyframes skinUnlockPop {
+  0% {
+    transform: scale(.92);
+    opacity: .6;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}

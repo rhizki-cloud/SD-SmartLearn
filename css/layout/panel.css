@@ -1,0 +1,17 @@
+/* =========================
+   Panel
+   ========================= */
+
+.panel {
+  background: rgba(255, 255, 255, .82);
+  border: 2px solid rgba(0, 0, 0, .07);
+  box-shadow: 0 12px 0 rgba(0, 0, 0, .10);
+  border-radius: var(--radius-xl);
+}
+
+@media (max-width: 576px) {
+  .panel {
+    padding: 14px !important;
+    box-shadow: var(--shadow-soft);
+  }
+}

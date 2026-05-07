@@ -1,0 +1,335 @@
+/* =========================
+   Mascot
+   ========================= */
+
+.mascot-wrap {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 9999;
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  pointer-events: auto;
+}
+
+#bimoMascot {
+  pointer-events: auto;
+}
+
+.mascot {
+  width: 84px;
+  height: 84px;
+  border-radius: 26px;
+  background: #fff;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, .12);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.mascot img {
+  width: 70px;
+  height: 70px;
+}
+
+.mascot.bounce {
+  animation: bounce 1.2s infinite;
+}
+
+.mascot-bubble {
+  max-width: 240px;
+  background: rgba(255, 255, 255, .92);
+  border-radius: 22px;
+  padding: 12px 14px;
+  box-shadow: 0 10px 0 rgba(0, 0, 0, .12);
+  border: 2px solid rgba(0, 0, 0, .10);
+  backdrop-filter: blur(6px);
+}
+
+.mascot-bubble .name {
+  font-weight: 800;
+}
+
+.mascot-bubble .txt {
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+@media (max-width: 576px) {
+  .mascot-wrap {
+    right: 10px;
+    bottom: 10px;
+  }
+
+  .mascot-bubble {
+    max-width: 240px;
+    padding: 10px 12px;
+  }
+
+  .mascot {
+    width: 76px;
+    height: 76px;
+    border-radius: 24px;
+  }
+
+  .mascot img {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.bimo-bubble {
+  display: none;
+  width: min(390px, 90vw);
+  background: rgba(255,255,255,.96);
+  border-radius: 28px;
+  padding: 18px;
+  box-shadow: 0 18px 60px rgba(0,0,0,.18);
+  border: 3px solid rgba(77,171,247,.25);
+  margin-bottom: 12px;
+  font-family: Poppins, system-ui, sans-serif;
+}
+
+.bimo-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+}
+
+.bimo-title {
+  font-weight: 1000;
+  font-size: 20px;
+}
+
+.bimo-sub {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+.bimo-close {
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 999px;
+  background: #f1f5f9;
+  font-weight: 1000;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.bimo-message {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.bimo-avatar-mini {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  background: #eef6ff;
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+}
+
+.bimo-avatar-mini img {
+  width: 48px;
+  height: 48px;
+}
+
+.bimo-text {
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+.bimo-progress {
+  margin-top: 14px;
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(77,171,247,.08);
+}
+
+.bimo-progress-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 900;
+  color: #4b5563;
+  margin-bottom: 7px;
+}
+
+.bimo-xpbar {
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(0,0,0,.08);
+  overflow: hidden;
+}
+
+.bimo-xpbar > div {
+  height: 100%;
+  width: 0%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #4dabf7, #845ef7);
+}
+
+.bimo-daily {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fff9db, #fff);
+  border: 2px dashed rgba(255,212,59,.65);
+}
+
+.bimo-daily-title {
+  font-weight: 1000;
+  font-size: 13px;
+}
+
+.bimo-daily-text {
+  margin-top: 4px;
+  font-size: 13px;
+  color: #4b5563;
+  font-weight: 700;
+}
+
+.bimo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.bimoBtn {
+  border: 2px solid rgba(77,171,247,.28);
+  background: #fff;
+  border-radius: 999px;
+  padding: 9px 13px;
+  font-weight: 1000;
+  cursor: pointer;
+  box-shadow: 0 6px 0 rgba(0,0,0,.07);
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.bimoBtn:hover {
+  transform: translateY(-2px);
+}
+
+.bimoBtn:active {
+  transform: translateY(2px);
+  box-shadow: 0 3px 0 rgba(0,0,0,.07);
+}
+
+.bimoBtn-main {
+  background: linear-gradient(135deg, #4dabf7, #845ef7);
+  color: #fff;
+  border-color: transparent;
+}
+
+.bimo-float {
+  width: 78px;
+  height: 78px;
+  border-radius: 24px;
+  border: 0;
+  background: linear-gradient(135deg, rgba(59,130,246,.18), rgba(99,102,241,.16));
+  box-shadow: 0 18px 45px rgba(0,0,0,.18);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.bimo-float img {
+  width: 62px;
+  height: 62px;
+}
+
+.bimo-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.bimoBtn {
+  width: 100%;
+  min-height: 54px;
+  justify-content: center;
+  text-align: center;
+}
+
+.bimoBtn-main {
+  grid-column: span 2;
+}
+
+.bimoGiftFull {
+  grid-column: span 2;
+}
+
+/* FIX: bubble Iky tidak terlalu tinggi */
+.bimo-bubble {
+  max-height: min(72vh, 620px);
+  overflow-y: auto;
+  padding: 16px;
+}
+
+/* Rapikan isi agar lebih compact */
+.bimo-message {
+  margin-top: 10px;
+}
+
+.bimo-progress {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.bimo-daily {
+  margin-top: 10px;
+  padding: 10px;
+}
+
+.bimo-actions {
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.bimoBtn {
+  min-height: 46px;
+  padding: 8px 12px;
+  font-size: 15px;
+}
+
+/* posisi bubble naik/turun lebih aman */
+#bimoWrap {
+  right: 18px !important;
+  bottom: 18px !important;
+}
+
+/* Mobile / layar pendek */
+@media (max-height: 720px) {
+  .bimo-bubble {
+    max-height: 64vh;
+  }
+
+  .bimo-avatar-mini {
+    width: 48px;
+    height: 48px;
+  }
+
+  .bimo-avatar-mini img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .bimo-title {
+    font-size: 18px;
+  }
+
+  .bimo-text {
+    font-size: 15px;
+  }
+}

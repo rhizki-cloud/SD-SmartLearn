@@ -1,0 +1,45 @@
+/* =========================
+   Base
+   ========================= */
+
+body {
+  font-family: "Comic Neue", "Poppins", system-ui;
+  padding-bottom: 140px;
+
+  background:
+    radial-gradient(circle at 10% 10%, rgba(255, 212, 59, .22) 0 140px, transparent 141px),
+    radial-gradient(circle at 90% 20%, rgba(247, 131, 172, .18) 0 160px, transparent 161px),
+    radial-gradient(circle at 20% 90%, rgba(81, 207, 102, .16) 0 180px, transparent 181px),
+    radial-gradient(circle at 85% 88%, rgba(132, 94, 247, .14) 0 200px, transparent 201px),
+    linear-gradient(180deg, #f3fbff 0%, #ffffff 45%, #fff6ff 100%);
+}
+
+/* Dotted pattern */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgba(15, 23, 42, .06) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+  opacity: .35;
+  z-index: -1;
+}
+
+/* Section underline */
+.h4,
+.h3 {
+  position: relative;
+}
+
+.h4::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(255, 212, 59, .55);
+  margin-top: 8px;
+}
+
+body { padding-top: 90px; /* 🔥 penting */ }
