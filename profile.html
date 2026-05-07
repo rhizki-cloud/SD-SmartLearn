@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SD SmartLearn — Profil</title>
+  <link rel="icon" type="image/png" href="aset/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-custom">
+    <div class="container py-2 d-flex align-items-center gap-2">
+      <a class="navbar-brand fw-bold" href="home.html">⬅️ Dashboard</a>
+      <div class="ms-auto d-flex gap-2">
+        <a class="btn btn-outline-primary" href="#" id="navKelasBtn">
+          📚 Kelas
+        </a>
+        <a class="btn btn-outline-primary" href="hadiah.html">🎁 Hadiah</a>
+        <a class="btn btn-outline-primary" href="games.html">🎮 Games</a>
+        <button class="btn btn-outline-secondary btn-sm" id="logoutBtn">Keluar</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <div class="top-hero p-3 p-md-4 position-relative mb-3">
+      <div class="hero-blob2"></div>
+      <div class="hero-blob"></div>
+
+      <div class="row g-3 align-items-center position-relative">
+        <div class="col-lg-7">
+          <!-- chip kecil (avatar + nama) -->
+          <div class="kid-chip mb-2" id="profileName">😀 Profil</div>
+
+          <!-- judul besar -->
+          <h1 class="h3 m-0" style="font-weight:900;">
+            Profil <span id="profileNameTop"></span> — Bintang & Badge ⭐🏅
+          </h1>
+
+          <div class="text-muted mt-1">Lihat progress kamu per kelas dan mapel ya 😄</div>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="row g-2">
+            <div class="col-6">
+              <div class="kid-stat">
+                <div class="num" id="pStars">⭐ 0</div>
+                <div class="lbl">Bintang kamu</div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="kid-stat">
+                <div class="num" id="pBadges">🏅 0</div>
+                <div class="lbl">Badge Kamu</div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="kid-stat">
+                <div class="d-flex justify-content-between small text-muted mb-1">
+                  <div>Progress keseluruhan</div>
+                  <div id="pPct">0%</div>
+                </div>
+                <div class="kid-bar"><div id="pBar" style="width:0%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Avatar -->
+    <div class="panel mb-3">
+      <h2 class="h4 mb-2" style="font-weight:900;">
+        Avatar Kamu <span id="currentAvatarTitle">🧒</span>
+      </h2>      
+        <!-- boleh tetap hardcode, nanti profile.js yang handle active + klik -->
+        <div id="avatarPick">
+
+          <div id="avatarPick">
+
+            <div class="avatar-group">
+              <div class="avatar-title">👦 Manusia</div>
+              <div class="avatar-grid">
+                <div class="avatar" data-unlock="1">👦</div>
+                <div class="avatar" data-unlock="1">👧</div>
+                <div class="avatar" data-unlock="1">🧑</div>
+                <div class="avatar" data-unlock="1">👩</div>
+                <div class="avatar" data-unlock="1">🧒</div>
+                <div class="avatar" data-unlock="10">👶</div>
+                <div class="avatar" data-unlock="15">👨</div>
+                <div class="avatar" data-unlock="20">👵</div>
+              </div>
+            </div>
+          
+            <div class="avatar-group">
+              <div class="avatar-title">🐶 Hewan</div>
+              <div class="avatar-grid">
+                <div class="avatar" data-unlock="1">🐶</div>
+                <div class="avatar" data-unlock="1">🐱</div>
+                <div class="avatar" data-unlock="10">🐰</div>
+                <div class="avatar" data-unlock="10">🦊</div>
+                <div class="avatar" data-unlock="20">🐻</div>
+                <div class="avatar" data-unlock="20">🐼</div>
+                <div class="avatar" data-unlock="20">🐯</div>
+                <div class="avatar" data-unlock="30">🦁</div>
+                <div class="avatar" data-unlock="30">🐵</div>
+                <div class="avatar" data-unlock="30">🐸</div>
+                <div class="avatar" data-unlock="35">🐭</div>
+                <div class="avatar" data-unlock="35">🐹</div>
+                <div class="avatar" data-unlock="35">🐨</div>
+                <div class="avatar" data-unlock="35">🐔</div>
+                <div class="avatar" data-unlock="30">🐧</div>
+                <div class="avatar" data-unlock="30">🐤</div>
+                <div class="avatar" data-unlock="40">🐙</div>
+                <div class="avatar" data-unlock="40">🐢</div>
+                <div class="avatar" data-unlock="40">🐬</div>
+              </div>
+            </div>
+          
+            <div class="avatar-group">
+              <div class="avatar-title">🧙 Fantasi</div>
+              <div class="avatar-grid">
+                <div class="avatar" data-unlock="20">🦄</div>
+                <div class="avatar" data-unlock="20">🐉</div>
+                <div class="avatar" data-unlock="25">🤖</div>
+                <div class="avatar" data-unlock="25">👻</div>
+                <div class="avatar" data-unlock="25">👽</div>
+                <div class="avatar" data-unlock="30">🧙</div>
+                <div class="avatar" data-unlock="30">🦸</div>
+              </div>
+            </div>
+          
+            <div class="avatar-group">
+              <div class="avatar-title">⭐ Lainnya</div>
+              <div class="avatar-grid">
+                <div class="avatar" data-unlock="10">🌞</div>
+                <div class="avatar" data-unlock="20">⭐</div>
+                <div class="avatar" data-unlock="30">🌈</div>
+                <div class="avatar" data-unlock="35">🚀</div>
+                <div class="avatar" data-unlock="35">⚽</div>
+                <div class="avatar" data-unlock="20">🎨</div>
+              </div>
+            </div>
+          
+          </div>
+        
+        </div>
+      <div class="small text-muted mt-2">Naik level untuk membuka avatar baru 🔓</div>
+    </div>
+
+    <!-- Badge -->
+    <div class="panel mb-3">
+      <h2 class="h4 mb-2" style="font-weight:900;">Koleksi Badge 🏅</h2>
+      <div class="row g-2" id="badgeGrid"></div>
+    </div>
+
+    <!-- Progress per kelas -->
+    <div class="panel">
+      <div class="d-flex flex-wrap justify-content-between align-items-end gap-2">
+        <div>
+          <h2 class="h4 mb-1" style="font-weight:900;">Progress Per Kelas 📊</h2>
+          <div class="text-muted">Pilih kelas untuk lihat progress mapelnya</div>
+        </div>
+
+        <select class="form-select" id="gradeSelect" style="max-width:220px;">
+          <option value="1">Kelas 1</option>
+          <option value="2">Kelas 2</option>
+          <option value="3">Kelas 3</option>
+          <option value="4">Kelas 4</option>
+          <option value="5">Kelas 5</option>
+          <option value="6">Kelas 6</option>
+        </select>
+      </div>
+
+      <hr class="my-3" />
+      <div id="progressList"></div>
+    </div>
+  </main>
+
+  <script src="js/content-core.js"></script>
+<script src="js/content-quiz-builder.js"></script>
+
+<script src="js/content/kelas-1/content-kelas-1.js"></script>
+<script src="js/content/kelas-2/content-kelas-2.js"></script>
+<script src="js/content/kelas-3/content-kelas-3.js"></script>
+<script src="js/content/kelas-4/content-kelas-4.js"></script>
+<script src="js/content/kelas-5/content-kelas-5.js"></script>
+<script src="js/content/kelas-6/content-kelas-6.js"></script>
+
+  <script src="js/app.js"></script>
+  <script src="js/navbar-kelas.js"></script>
+  <script src="js/profile.js"></script>
+
+  <audio id="bgm" src="musik.mp3" loop autoplay></audio>
+
+<script>
+const bgm = document.getElementById("bgm");
+
+// volume maksimal
+bgm.volume = 10.0;
+
+// paksa play setelah user klik layar
+document.addEventListener("click", () => {
+    bgm.play();
+});
+</script>
+</body>
+</html>

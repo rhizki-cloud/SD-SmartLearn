@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SD SmartLearn — Dashboard</title>
+
+  <link rel="icon" type="image/png" href="aset/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/app.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-custom">
+    <div class="container py-2 d-flex align-items-center gap-2">
+      <a class="navbar-brand" href="home.html">
+        <img src="aset/logo.png" alt="Logo SD SmartLearn" class="navbar-logo">
+        <span>SD SmartLearn🌈</span>
+      </a>
+
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <a class="btn btn-outline-primary" href="#" id="navKelasBtn">
+          📚 Kelas
+        </a>
+        <a class="btn btn-outline-primary" href="profile.html" data-profile-btn>👧 Profil</a>
+        <a class="btn btn-outline-primary" href="hadiah.html">🎁 Hadiah</a>
+        <a class="btn btn-outline-primary" href="games.html">🎮 Games</a>
+        <button class="btn btn-outline-secondary btn-sm" id="logoutBtn" type="button">Keluar</button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container py-4">
+    <section class="top-hero p-3 p-md-4 position-relative mb-4">
+      <div class="hero-blob2"></div>
+      <div class="hero-blob"></div>
+
+      <div class="row g-4 align-items-stretch position-relative">
+        <div class="col-lg-5">
+          <div class="h-100 d-flex flex-column justify-content-center">
+            <div class="kid-chip mb-2" id="helloChip">👋 Halo!</div>
+
+            <h1 class="h3 m-0" style="font-weight:900;">
+              Mau belajar apa hari ini? 😄📘
+            </h1>
+
+            <div class="text-muted mt-2">
+              Pilih kelas kamu dulu ya. Setelah itu pilih mapel dan mulai kuis! ⭐
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <a class="btn btn-game" href="games.html">🎮 Main Games</a>
+              <a class="btn btn-badge" href="profile.html">🏅 Lihat Badge</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <div class="home-stats">
+            <div class="home-stat-card">
+              <div class="home-stat-icon">⭐</div>
+              <div class="home-stat-value" id="homeStars">0</div>
+              <div class="home-stat-label">Bintang kamu</div>
+              <div class="home-stat-small">Terus kumpulkan bintang ya!</div>
+            </div>
+
+            <div class="home-stat-card">
+              <div class="home-stat-icon">✅</div>
+              <div class="home-stat-value" id="homeDone">0</div>
+              <div class="home-stat-label">Mapel selesai</div>
+              <div class="home-stat-small">Semakin rajin, semakin hebat!</div>
+            </div>
+
+            <div class="home-stat-card">
+              <div class="home-stat-value" id="lvHome">🏆 Lv 1</div>
+              <div class="home-stat-label">Progress keseluruhan</div>
+              
+
+              <div class="d-flex justify-content-between small text-muted mt-2">
+                <span id="homePct">0%</span>
+                <span id="homeXp">0/20 XP</span>
+              </div>
+
+              <div class="home-progress">
+                <div id="homeProgressBar"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel kelas-panel">
+      <h2 class="h4 mb-1" style="font-weight:900;">Pilih Kelas Kamu 🎒</h2>
+      <div class="text-muted mb-3">Klik kartu kelas ya!</div>
+
+      <div class="kelas-grid" id="kelasGrid">
+        <div class="kelas-card biru" data-grade="1">
+          <div class="ico">🎒</div>
+          <div class="kelas-info">
+            <b>Kelas 1</b>
+            <div class="small opacity-75">Klik untuk pilih</div>
+          </div>
+        </div>
+
+        <div class="kelas-card hijau" data-grade="2">
+          <div class="ico">📚</div>
+          <div class="kelas-info">
+            <b>Kelas 2</b>
+            <div class="small opacity-75">Klik untuk pilih</div>
+          </div>
+        </div>
+
+        <div class="kelas-card kuning" data-grade="3">
+          <div class="ico">✏️</div>
+          <div class="kelas-info">
+            <b>Kelas 3</b>
+            <div class="small opacity-75">Klik untuk pilih</div>
+          </div>
+        </div>
+
+        <div class="kelas-card merah" data-grade="4">
+          <div class="ico">🎓</div>
+          <div class="kelas-info">
+            <b>Kelas 4</b>
+            <div class="small opacity-75">Klik untuk pilih</div>
+          </div>
+        </div>
+
+        <div class="kelas-card ungu" data-grade="5">
+          <div class="ico">🧠</div>
+          <div class="kelas-info">
+            <b>Kelas 5</b>
+            <div class="small opacity-75">Klik untuk pilih</div>
+          </div>
+        </div>
+
+        <div class="kelas-card pink" data-grade="6">
+          <div class="ico">🚀</div>
+          <div class="kelas-info">
+            <b>Kelas 6</b>
+            <div class="small opacity-75">Klik untuk pilih</div>
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-3">
+
+      <div class="home-tip small text-muted">
+        Tip: buka <b>Profil</b> untuk lihat bintang & badge 🏅
+      </div>
+    </section>
+  </main>
+
+  <script src="js/content-core.js"></script>
+  <script src="js/content-quiz-builder.js"></script>
+  <script src="js/content/kelas-1/content-kelas-1.js"></script>
+  <script src="js/content/kelas-2/content-kelas-2.js"></script>
+  <script src="js/content/kelas-3/content-kelas-3.js"></script>
+  <script src="js/content/kelas-4/content-kelas-4.js"></script>
+  <script src="js/content/kelas-5/content-kelas-5.js"></script>
+  <script src="js/content/kelas-6/content-kelas-6.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/navbar-kelas.js"></script>
+  <script src="js/home-final.js"></script>
+
+  <audio id="bgm" src="musik.mp3" loop autoplay></audio>
+
+<script>
+const bgm = document.getElementById("bgm");
+
+// volume maksimal
+bgm.volume = 10.0;
+
+// paksa play setelah user klik layar
+document.addEventListener("click", () => {
+    bgm.play();
+});
+</script>
+</body>
+</html>
